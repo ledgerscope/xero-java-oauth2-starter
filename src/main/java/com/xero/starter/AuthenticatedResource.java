@@ -63,7 +63,9 @@ public class AuthenticatedResource extends HttpServlet {
 		
 		try {
 			// Get All Contacts
-			Contacts contacts = accountingApi.getContacts(accessToken,xeroTenantId,null, null, null, null, null, null);
+			//Contacts contacts = accountingApi.getContacts(accessToken,xeroTenantId,null, null, null, null, null, null);
+			Contacts contacts = accountingApi.getContacts(accessToken,xeroTenantId,null, null, null, null, null, null, null);
+
 			System.out.println("How many contacts did we find: " + contacts.getContacts().size());
 			
 			/* CREATE ACCOUNT */
@@ -100,7 +102,8 @@ public class AuthenticatedResource extends HttpServlet {
 			// GET INVOICE MODIFIED in LAST 24 HOURS
 			OffsetDateTime invModified = OffsetDateTime.now();
 			invModified.minusDays(1);	
-			Invoices InvoiceList24hour = accountingApi.getInvoices(accessToken,xeroTenantId,invModified, null, null, null, null, null, null, null, null, null, null);
+			Invoices InvoiceList24hour = accountingApi.getInvoices(accessToken,xeroTenantId,invModified, null, null, null, null, null, null, null, null, null, null, null);
+
 			System.out.println("How many invoices modified in last 24 hours?: " + InvoiceList24hour.getInvoices().size());
 		
 			response.getWriter().append("API calls completed - check your output console results");
