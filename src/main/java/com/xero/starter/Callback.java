@@ -19,18 +19,18 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.MemoryDataStoreFactory;
-import com.xero.api.ApiClient;
-import com.xero.api.client.IdentityApi;
-import com.xero.models.identity.Connection;
+import com.github.xeroapi.ApiClient;
+import com.github.xeroapi.client.IdentityApi;
+import com.github.xeroapi.models.identity.Connection;
 
 @WebServlet("/Callback")
 public class Callback extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    final String clientId = "--CLIENT-ID--";
-    final String clientSecret = "--CLIENT-SECRET--";
+    final String clientId = "61ffa4df-1286-4af9-aec2-4cddba9796a4";
+    final String clientSecret = "AQAAAAEAACcQAAAAEL6QnMWM9FRafKZXE4E1FWdiBNVBmp+/ODIwpprUWQDQJyzRXfYeKM6hfqvmn54wUA==";
     final String redirectURI = "http://localhost:8080/starter/Callback";
-    final String TOKEN_SERVER_URL = "https://identity.xero.com/connect/token";
-    final String AUTHORIZATION_SERVER_URL = "https://login.xero.com/identity/connect/authorize";
+    final String TOKEN_SERVER_URL = "http://localhost:60771/connect/token";
+    final String AUTHORIZATION_SERVER_URL = "http://localhost:60771/identity/connect/authorize";
     final NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport();
     final JsonFactory JSON_FACTORY = new JacksonFactory();
 
@@ -80,7 +80,7 @@ public class Callback extends HttpServlet {
 
             TokenResponse tokenResponse = flow.newTokenRequest(code).setRedirectUri(redirectURI).execute();
 
-            ApiClient defaultIdentityClient = new ApiClient("https://api.xero.com", null, null, null, null);
+            ApiClient defaultIdentityClient = new ApiClient("http://localhost:60771", null, null, null, null, "http://localhost:60771");
             IdentityApi idApi = new IdentityApi(defaultIdentityClient);
             List<Connection> connection = idApi.getConnections(tokenResponse.getAccessToken(),null);
         
