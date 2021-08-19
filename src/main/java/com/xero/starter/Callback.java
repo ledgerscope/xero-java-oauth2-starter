@@ -19,9 +19,9 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.MemoryDataStoreFactory;
-import com.github.xeroapi.ApiClient;
-import com.github.xeroapi.client.IdentityApi;
-import com.github.xeroapi.models.identity.Connection;
+import com.xero.api.ApiClient;
+import com.xero.api.client.IdentityApi;
+import com.xero.models.identity.Connection;
 
 @WebServlet("/Callback")
 public class Callback extends HttpServlet {

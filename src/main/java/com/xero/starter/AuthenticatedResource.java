@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.threeten.bp.OffsetDateTime;
 
-import com.github.xeroapi.*;
-import com.github.xeroapi.client.AccountingApi;
-import com.github.xeroapi.models.accounting.*;
+import com.xero.api.*;
+import com.xero.api.client.AccountingApi;
+import com.xero.models.accounting.*;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.exceptions.JWTDecodeException;
