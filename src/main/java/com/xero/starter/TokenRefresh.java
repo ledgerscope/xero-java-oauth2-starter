@@ -23,7 +23,7 @@ public class TokenRefresh {
     
     final String clientId = "61ffa4df-1286-4af9-aec2-4cddba9796a4";
     final String clientSecret = "AQAAAAEAACcQAAAAEL6QnMWM9FRafKZXE4E1FWdiBNVBmp+/ODIwpprUWQDQJyzRXfYeKM6hfqvmn54wUA==";
-    final String TOKEN_SERVER_URL = "http://localhost:60771/connect/token";
+    final String TOKEN_SERVER_URL = "https://localhost:44363/connect/token";
 
     public TokenRefresh() {
         super();

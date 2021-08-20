@@ -27,11 +27,11 @@ public class Authorization extends HttpServlet {
     final String clientId = "61ffa4df-1286-4af9-aec2-4cddba9796a4";
     final String clientSecret = "AQAAAAEAACcQAAAAEL6QnMWM9FRafKZXE4E1FWdiBNVBmp+/ODIwpprUWQDQJyzRXfYeKM6hfqvmn54wUA==";
     final String redirectURI = "http://localhost:8080/starter/Callback";
-    final String TOKEN_SERVER_URL = "http://localhost:60771/connect/token";
-    final String AUTHORIZATION_SERVER_URL = "http://localhost:60771/identity/connect/authorize";
+    final String TOKEN_SERVER_URL = "https://localhost:44363/connect/token";
+    final String AUTHORIZATION_SERVER_URL = "https://localhost:44363/identity/connect/authorize";
     final NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport();
     final JsonFactory JSON_FACTORY = new JacksonFactory();
-    final String secretState = "secret" + new Random().nextInt(999_999);
+    final String secretState = "secret" + new Random().nextInt(999_999) + "|1004";
     
     /**
      * @see HttpServlet#HttpServlet()
