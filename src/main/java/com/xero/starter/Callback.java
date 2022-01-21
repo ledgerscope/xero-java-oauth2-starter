@@ -26,11 +26,11 @@ import com.xero.models.identity.Connection;
 @WebServlet("/Callback")
 public class Callback extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    final String clientId = "61ffa4df-1286-4af9-aec2-4cddba9796a4";
-    final String clientSecret = "AQAAAAEAACcQAAAAEL6QnMWM9FRafKZXE4E1FWdiBNVBmp+/ODIwpprUWQDQJyzRXfYeKM6hfqvmn54wUA==";
+    final String clientId = "--CLIENT-ID--";
+    final String clientSecret = "--CLIENT-SECRET--";
     final String redirectURI = "http://localhost:8080/starter/Callback";
-    final String TOKEN_SERVER_URL = "https://localhost:44363/connect/token";
-    final String AUTHORIZATION_SERVER_URL = "https://localhost:44363/identity/connect/authorize";
+    final String TOKEN_SERVER_URL = "https://xeroapi.ledgerscope.com/--SOURCE ACCOUNTING SOFTWARE--/connect/token";
+    final String AUTHORIZATION_SERVER_URL = "https://xeroapi.ledgerscope.com/--SOURCE ACCOUNTING SOFTWARE--/identity/connect/authorize";
     final NetHttpTransport HTTP_TRANSPORT = new NetHttpTransport();
     final JsonFactory JSON_FACTORY = new JacksonFactory();
 
@@ -80,7 +80,7 @@ public class Callback extends HttpServlet {
 
             TokenResponse tokenResponse = flow.newTokenRequest(code).setRedirectUri(redirectURI).execute();
 
-            ApiClient defaultIdentityClient = new ApiClient("https://localhost:44363", null, null, null, null, "https://localhost:44363");
+            ApiClient defaultIdentityClient = new ApiClient(" https://xeroapi.ledgerscope.com", null, null, null, null, " https://xeroapi.ledgerscope.com");
             IdentityApi idApi = new IdentityApi(defaultIdentityClient);
             List<Connection> connection = idApi.getConnections(tokenResponse.getAccessToken(),null);
         

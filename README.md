@@ -4,18 +4,13 @@ This Java project contains the code necessary to use the Xero-Java SDK and compl
 
 Note: this project was built & tested using [Visual  Studio Code](https://code.visualstudio.com/) and [Apache Tomcat 9.x](http://tomcat.apache.org/) server.
 
-## Create a Xero App
-To obtain your API keys, follow these steps and create a Xero app
+## Create a Ledgerflow App
+To obtain your API keys, follow these steps and create a Ledgerflow app
 
-* Create a [free Xero user account](https://www.xero.com/us/signup/api/) (if you don't have one)
-* Login to [Xero developer center](https://developer.xero.com/myapps)
-* Click "New App" link
-* Enter your App name, company url, privacy policy url.
-* Enter the redirect URI (this is your callback url - i.e. localhost:8080/starter/Callback)
-* Agree to terms and condition and click "Create App".
-* Click "Generate a secret" button.
-* Copy your client id and client secret and save for use later.
-* Click the "Save" button. You secret is now hidden.
+* Create a [free Ledgerflow user account](https://flow.ledgerscope.com/Account/Register)
+* Login to your Ledgerflow developer [dashboard](https://flow.ledgerscope.com/Partner/App) and create an API application
+* Copy the credentials from your API app and store them using a secure ENV variable strategy
+* Decide the [neccesary scopes](https://developer.xero.com/documentation/oauth2/scopes) for your app's functionality
 
 ## Add your API keys to this app
 You'll need to set the *clientId, clientSecret and redirectURI* in the following files
@@ -23,6 +18,9 @@ You'll need to set the *clientId, clientSecret and redirectURI* in the following
 * Authorization.java
 * Callback.java
 * TokenRefresh.java
+
+You also need to replace --SOURCE ACCOUNTING SOFTWARE--.
+The source accounting software values are 1004 to return QuickBooks Online data and 1009 to return Sage Business Cloud Accounting data.
 
 ## Build and deploy
 Compile your app and deploy to a server (tomcat, etc)

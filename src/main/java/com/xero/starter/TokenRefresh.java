@@ -21,9 +21,9 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 public class TokenRefresh {
     final static Logger logger = LoggerFactory.getLogger(TokenRefresh.class);
     
-    final String clientId = "61ffa4df-1286-4af9-aec2-4cddba9796a4";
-    final String clientSecret = "AQAAAAEAACcQAAAAEL6QnMWM9FRafKZXE4E1FWdiBNVBmp+/ODIwpprUWQDQJyzRXfYeKM6hfqvmn54wUA==";
-    final String TOKEN_SERVER_URL = "https://localhost:44363/connect/token";
+    final String clientId = "--CLIENT-ID--";
+    final String clientSecret = "--CLIENT-SECRET--";
+    final String TOKEN_SERVER_URL = "https://xeroapi.ledgerscope.com/--SOURCE ACCOUNTING SOFTWARE--/connect/token";
 
     public TokenRefresh() {
         super();
